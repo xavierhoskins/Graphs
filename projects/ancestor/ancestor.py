@@ -17,14 +17,17 @@ def earliest_ancestor(ancestors, starting_node):
     while len(queue) > 0:
         node = queue.pop(0)
         # check if node is parent to starting node
+        # find a parent pointing to this node
+        # a parent node pointing to another parent
+        # queue that to check again
         parent = node[0]
         if node not in visited:
             visited.add(node)
-            # find a parent pointing to this node
+            
             for ancestor in ancestors:
-                # a parent node pointing to another parent
+                
                 if ancestor[1] is parent:
-                    # queue that to check again
+                    
                     queue.append(ancestor)
                     break
     return parent
